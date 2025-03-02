@@ -1,22 +1,56 @@
-# Extractor de característiques per Wekinator / Feature Extractor for Wekinator
+You can download the feature extractor from the following GitHub repository:
+wek-feature-extractor
 
-Aquest projecte és un extractor de característiques per Wekinator. Utilitza dades en temps real del micròfon i les envia via OSC al port 6448 per a l'entrenament de models a Wekinator.
+Description
 
-This project is a feature extractor for Wekinator. It uses real-time microphone data and sends it via OSC to port 6448 for model training in Wekinator.
+This feature extractor captures real-time audio from the microphone, analyzes the volume (amplitude), and sends this data to Wekinator via OSC (Open Sound Control). It can be used for various applications, such as:
 
-## Com executar-lo / How to run it
+Interactive sound-based machine learning projects
 
-1. Assegura't de tenir Python instal·lat.
-   Make sure you have Python installed.
-   
-2. Instal·la les dependències necessàries / Install the required dependencies:
-pip install python-osc sounddevice numpy
+Music or performance-driven interactions
 
-3. Executa el fitxer Python / Run the Python file: 
+Real-time audio feature extraction for classification
+
+Adaptive sound-driven interfaces
+
+Dependencies and Installation
+
+Before running the feature extractor, ensure you have the following dependencies installed:
+
+Python 3.x
+
+numpy
+
+sounddevice
+
+python-osc
+
+To install these dependencies, run:
+
+pip install numpy sounddevice python-osc
+
+How to Run
+
+Clone the repository or download the files:
+
+git clone https://github.com/nbassart/wek-feature-extractor.git
+cd wek-feature-extractor
+
+Run the Python script:
+
 python envia_volum.py
 
-4. Obre Wekinator i selecciona el port 6448.
-Open Wekinator and select port 6448.
+Open Wekinator and set it to receive inputs on port 6448 with the message /wek/inputs.
 
+The program will continuously send the audio volume level to Wekinator in real time.
 
+Notes
+
+Ensure your microphone is properly configured and has the correct permissions.
+
+You can modify the script to analyze other audio features such as pitch or frequency.
+
+Press Ctrl+C to stop the program.
+
+For any issues or suggestions, feel free to contribute or raise an issue on GitHub!
 
